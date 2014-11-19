@@ -12,5 +12,7 @@ Thumbs.db
 *.py[cod]
 *.swp
 
+# cache directory
+cache
 # output directory
 output

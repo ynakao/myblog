@@ -40,7 +40,7 @@ PAGE_SAVE_AS = '{slug}/index.html'
 
 FFILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
 
-THEME = "pelican-themes/sundown"
+THEME = "themes/pelican-sundown"
 TYPOGRIFY = True
 SUMMARY_MAX_LENGTH = 20
 
