@@ -45,6 +45,6 @@ TAG_SAVE_AS = 'tag/{slug}/index.html'
 
 FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
 
-THEME = "themes/pelican-sundown"
+THEME = "themes/pelican_sundown"
 TYPOGRIFY = True
 SUMMARY_MAX_LENGTH = 20
