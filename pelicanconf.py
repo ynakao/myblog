@@ -9,7 +9,10 @@ SITEURL = ''
 PATH = 'content'
 STATIC_PATHS = ['images', 'images/favicon.ico']
 EXTRA_PATH_METADATA = {'images/favicon.ico': {'path': 'favicon.ico'}}
+<<<<<<< HEAD
 DELETE_OUTPUT_DIRECTORY = True
+=======
+>>>>>>> 2126e7cb55478a74008bf6da323470ce449a3648
 
 TIMEZONE = 'Asia/Tokyo'
 
