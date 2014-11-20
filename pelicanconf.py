@@ -7,6 +7,9 @@ SITENAME = u'UGarchive'
 SITEURL = ''
 
 PATH = 'content'
+STATIC_PATHS = ['images', 'images/favicon.ico']
+EXTRA_PATH_METADATA = {'images/favicon.ico': {'path': 'favicon.ico'}}
+DELETE_OUTPUT_DIRECTORY = True
 
 TIMEZONE = 'Asia/Tokyo'
 
@@ -37,12 +40,11 @@ ARTICLE_URL = '{date:%Y}/{date:%m}/{date:%d}/{slug}/'
 ARTICLE_SAVE_AS = '{date:%Y}/{date:%m}/{date:%d}/{slug}/index.html'
 PAGE_URL = '{slug}/'
 PAGE_SAVE_AS = '{slug}/index.html'
+TAG_URL = 'tag/{slug}/'
+TAG_SAVE_AS = 'tag/{slug}/index.html'
 
-FFILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
+FILENAME_METADATA = '(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
 
 THEME = "themes/pelican-sundown"
 TYPOGRIFY = True
 SUMMARY_MAX_LENGTH = 20
-
-DISQUS_SITENAME = "ynakao"
-GOOGLE_ANALYTICS = 'UA-56886615-1'

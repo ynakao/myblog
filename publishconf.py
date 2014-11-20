@@ -14,12 +14,11 @@ SITEURL = 'http://blog.yujinakao.com'
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 TAG_FEED_ATOM = 'feeds/%s.atom.xml'
 
 DELETE_OUTPUT_DIRECTORY = True
 
 # Following items are often useful when publishing
 
-# DISQUS_SITENAME = ""
-# GOOGLE_ANALYTICS = ""
+DISQUS_SITENAME = "ynakao"
+GOOGLE_ANALYTICS = 'UA-56886615-1'
