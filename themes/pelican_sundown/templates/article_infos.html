@@ -1,11 +1,11 @@
 <p>
 <small>
 <abbr class="published" title="{{ article.date.isoformat() }}">
-  {{ article.date|strftime('%d %b %Y') }}
+  {{ article.date|strftime('%b %d, %Y') }}
 </abbr> 
 {% if article.modified %}
 <abbr class="modified" title="{{ article.modified.isoformat() }}">
- | Update: {{ article.modified|strftime('%d %b %Y') }}
+ | Update: {{ article.modified|strftime('%b %d, %Y') }}
 </abbr> 
 {% endif %} | 
 {% include 'taglist.html' %} -- (<a href="{{ SITEURL }}/{{ article.url
