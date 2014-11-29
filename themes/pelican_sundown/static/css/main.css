@@ -97,6 +97,11 @@ dt {
   font-weight:700;
 }
 
+dd {
+  display: block;
+  -webkit-margin-start: 0px;
+}
+
 th {
   color:#444;
 }
