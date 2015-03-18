@@ -21,4 +21,4 @@ DELETE_OUTPUT_DIRECTORY = True
 # Following items are often useful when publishing
 
 DISQUS_SITENAME = "ynakao"
-GOOGLE_ANALYTICS = 'UA-56886615-1'
+# GOOGLE_ANALYTICS = ""
