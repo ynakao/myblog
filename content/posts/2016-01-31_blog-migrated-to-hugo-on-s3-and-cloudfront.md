@@ -88,7 +88,7 @@ Hugoの基本的な設定を指定する`config.toml`を編集します。この
 ```
 $ cd ..
 $ cat config.toml
-baseurl = "https://<i></i>blog.yujinakao.com/"
+baseurl = "https://blog.yujinakao.com/"
 languageCode = "ja-jp"
 title = "UGarchive"
 theme = "vienna"
