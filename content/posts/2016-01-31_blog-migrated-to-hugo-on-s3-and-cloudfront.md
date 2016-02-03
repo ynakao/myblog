@@ -204,7 +204,7 @@ CloudFrontを使ってSSL通信に対応したコンテンツデリバリーの�
 - [CloudFrontコンソール](https://console.aws.amazon.com/cloudfront/home)に適切な権限を持つユーザーでログイン。`Create Distribution`をクリックする。
 - デリバリー方式の選択を求められるので、`Web`の項目の`Get Started`をクリックする。
 - 各種項目を以下のように設定した。特に明記していなければ空白のままか、もしくは変更を 行ってない場合である。
-  - **Origin Domain Name**: S3`Endpoint`のURLを入力(上記参照)。
+  - **Origin Domain Name**: S3 `Endpoint` URLのドメイン箇所のみを入力。
   - **Origin ID**: 上のOrigin Domain Nameを入力すると自動で割り振られる。
   - **Alternate Domain Names(CNAMEs)**: `blog.yujinakao.com`を入力。
   - **SSL Certificate**: `Custom SSL Certificate`を選択。さらにプルダウンから先に作成したblog.yujinakao.comのSSL証明書を選択する。
