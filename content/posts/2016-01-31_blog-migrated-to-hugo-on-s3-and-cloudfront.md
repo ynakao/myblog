@@ -29,7 +29,7 @@ title = "HugoをS3+CloudFront上にSSLでホストする"
 
 まず必要となるソフトウェアをインストールします。環境はMac OS Xで行い、[Homebrew](http://brew.sh/)を使っています。他OSでも各ディストリビューションのパッケージマネージャーやバイナリなどから適宜インストールできます。
 
-```
+```nohighlight
 $ brew install hugo pandoc git awscli
 ```
 
@@ -39,7 +39,7 @@ hugoはサイトジェネレーターです。Pelicanでは原稿をreStructured
 
 続いてローカル環境でブログを構築します。ref: [Hugo Quickstart Guide](https://gohugo.io/overview/quickstart/)
 
-```
+```nohighlight
 $ hugo new site path/to/blog
 $ cd path/to/blog 
 $ tree .
@@ -54,7 +54,8 @@ $ tree .
 
 Pandocを使ってMarkdown形式に変換した原稿を`content`ディレクトリ内にコピーします。画像などのツリー関係はリンクが切れないように元の状態を維持しておきます。PelicanとHugoでは原稿の日付やタイトルといったメタデータの書き方が異なるため、それらは手動で書き換えました。ref: 
 [Pandoc - Getting started with pandoc](http://pandoc.org/getting-started.html#step-6-converting-a-file), [Hugo - Front Matter](https://gohugo.io/content/front-matter/)
-```
+
+```nohighlight
 // .rstを.mdに変換。.rstファイルのあるディレクトリにて
 $ pandoc input.rst -f rst -t markdown -s -o output.md
 
@@ -76,7 +77,7 @@ content/
 
 Hugoのトップディレクトリにて、
 
-```
+```nohighlight
 $ mkdir themes
 $ cd themes
 $ git clone https://github.com/keichi/vienna
@@ -85,7 +86,7 @@ $ git clone https://github.com/keichi/vienna
 
 Hugoの基本的な設定を指定する`config.toml`を編集します。このファイルはYAML形式やJSON形式にも対応していますが、デフォルトのTOML形式で記述しました。ref: [Hugo - Configuring Hugo](https://gohugo.io/overview/configuration/)
 
-```
+```nohighlight
 $ cd ..
 $ cat config.toml
 baseurl = "https://blog.yujinakao.com/"
@@ -107,7 +108,7 @@ theme = "vienna"
 
 例えば、`content/posts/2013-09-16_hello-world.md`のメタデータは以下のようになっています。
 
-```
+```nohighlight
 $ cat content/posts/2013-09-16_hello-world.md 
 +++
 date = "2013-09-16"
@@ -124,7 +125,7 @@ slug = "hello-world"
 
 `config.toml`の編集が終わったらいよいよHTMLファイルを生成します。
 
-```
+```nohighlight
 $ hugo
 ```
 
@@ -141,7 +142,7 @@ $ hugo
 - `Permissions`をクリックし、さらに`Edit bucket policy`をクリック。
 - ポップアップウインドウのテキストエリアに以下の内容をコピーする。`blog.yujinakao.com`の箇所は運用するサイトURLに合わせて適宜変更する。
 
-```
+```nohighlight
 {
   "Version":"2012-10-17",
   "Statement":[{
@@ -168,7 +169,7 @@ $ hugo
 - 鍵の作成に成功の旨のポップアップウインドウが表示されたら、`Show User Security Credentials`をクリックし、`Access Key ID`と`Secret Access Key`の内容をメモしておく。`Download Credentials`からダウンロードすることも可能。ウインドウを閉じると`Secret Access Key`は二度と見ることができなくなり、忘れると再発行しなければならないことに注意。
 - ローカル環境のコマンドラインでIDとKeyの設定を行う。ref: [configure — AWS CLI 1.10.1 Command Reference](http://docs.aws.amazon.com/cli/latest/reference/configure/index.html)
 
-```
+```nohighlight
 $ aws configure
 AWS Access Key ID [None]: "Access Key ID"
 AWS Secret Access Key [None]: "Secret Access Key"
@@ -180,7 +181,7 @@ Default output format [None]:
 
 一通りの準備が整ったのでCloudFrontの設定を行う前に、S3のみでサイトがホストされるか確認しました。`public`ディレクトリ内のファイルを作成したS3のバケットにアップロードします。下の`blog.yujinakao.com`には作成したバケットの名前を指定します。ref: [sync — AWS CLI 1.10.1 Command Reference](http://docs.aws.amazon.com/cli/latest/reference/s3/sync.html)
 
-```
+```nohighlight
 $ aws s3 sync public/ s3://blog.yujinakao.com
 ```
 
