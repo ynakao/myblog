@@ -65,7 +65,7 @@ import requests
 import bs4
 import datetime
 # Load twitter tokens from the external twitterTokens.py file.
-# Tokens are in the dictonary named "tokens".
+# Tokens are in the dictionary named "tokens".
 from twitterTokens import tokens
 import tweepy
 
