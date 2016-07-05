@@ -15,7 +15,7 @@ GoogleやAppleのiCloudなどのサービスを利用すれば、各デバイス
 
 もうすこしミニマルな解決策はないものかと調べていると、[Radicale](http://radicale.org/)や[Baïkal](http://sabre.io/baikal/)を見つけました。ところが、まずRadicaleはインストールが複雑でドキュメントも分かりやすいとは言えず、動かすところまでたどり着けませんでした。次にBaïkalはなんとかインストール出来たのですが、[同期がうまくいかず](https://github.com/fruux/Baikal/issues/559)動作が不安定でした。  
 
-やはりownCloudで運用するべきかと思い直していると、[Nextcloud](https://nextcloud.com/)というプロジェクトがアナウンスされました。どうやらownCloud内で意見の相違があったようで、ownCloud創設者やコアディベロッパー達が新たに立ち上げたフォークとのことです[[1]](https://nextcloud.com/we-are-nextcloud-the-future-of-private-file-sync-and-share/), [[2]](https://osdn.jp/magazine/16/06/03/163000)。面白そうなので心機一転Nextcloudを新たにインストールすることとしました。
+やはりownCloudで運用するべきかと思い直していると、[Nextcloud](https://nextcloud.com/)というプロジェクトがアナウンスされました。どうやらownCloud内で意見の相違があったようで、ownCloud創設者やコアディベロッパー達が新たに立ち上げたフォークとのことです[[1](https://nextcloud.com/we-are-nextcloud-the-future-of-private-file-sync-and-share/)], [[2](https://osdn.jp/magazine/16/06/03/163000)]。面白そうなので心機一転Nextcloudを新たにインストールすることとしました。
 
 ### 方針
 
@@ -102,7 +102,7 @@ $ su  // ルートユーザに変更
 
 ウィザードが現れ、メールアドレスの入力や利用規約への同意が求められます。続いてSSL証明書を発行したいドメイン名を入力します。現在Let's Encryptはマルチドメインやワイルドカードに対応していないため、複数のドメインに対応させたい場合はその都度発行する手続きが必要です。入力すると、発行を申請したサーバーのIPアドレスが記録される旨のお知らせが表示されるので`OK`を選択します。
 
-するとPythonの簡易ウェブサーバー機能を用いた認証の段階に入り、`Press ENTER to continue`と表示され入力待ちの状態になります。画面に以下のような手順をルートユーザで進めるよう促されます。ウェブサーバーを稼働させるため、新しいターミナルウインドウを開いてそこで作業を行います。
+Pythonの簡易ウェブサーバー機能を用いた認証の段階に入り、`Press ENTER to continue`と表示され入力待ちの状態になります。画面に以下のような手順をルートユーザで進めるよう促されます。ウェブサーバーを稼働させるため、新しいターミナルウインドウを開いてそこで作業を行います。
 
 ```nohighlight
 # mkdir -p /tmp/certbot/public_html/.well-known/acme-challenge
