@@ -10,7 +10,6 @@ copyright = '<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"
 [params]
   twitter = "nakaoyuji"
   github = "ynakao"
-  disqus = "ynakao"
   author = "Yuji Nakao"
   avatar = "/images/avatar.jpg"
   contact = "mailto:nakaoyuji.nakao@gmail.com"
