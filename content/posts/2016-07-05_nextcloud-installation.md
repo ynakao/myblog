@@ -138,7 +138,7 @@ SHA256チェックサムを検証します。
 
 ```nohighlight
 $ sha256sum -c nextcloud-x.y.z.tar.bz2.sha256 < nextcloud-x.y.z.tar.bz2
-nextcloud-9.0.51.tar.bz2: OK
+nextcloud-x.y.z.tar.bz2: OK
 ```
 
 OKが出ればファイルの同一性は確認できました。
@@ -147,7 +147,7 @@ OKが出ればファイルの同一性は確認できました。
 
 ```nohighlight
 $ gpg --import nextcloud.asc  // 公開鍵のインポート
-$ gpg --verify nextcloud-9.0.51.tar.bz2.asc nextcloud-9.0.51.tar.bz2
+$ gpg --verify nextcloud-x.y.z.tar.bz2.asc nextcloud-x.y.z.tar.bz2
 ```
 
 `Good Signature`と表示されれば完了です。
