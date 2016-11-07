@@ -3,7 +3,7 @@ Tags = [ 'aws', 'python', 'twitter' ]
 date = "2016-02-17"
 slug = "mocos-kitchen-twitter-bot-on-aws-lambda"
 title = "AWS LambdaでMOCO'Sキッチンの更新情報をつぶやくTwitter Botを動かす"
-modified = "2016-07-05"
+modified = "2016-11-07"
 +++
 
 ### はじめに
@@ -61,6 +61,7 @@ tokens = dict(
 import requests
 import bs4
 import datetime
+import re
 # Load twitter tokens from the external twitterTokens.py file.
 # Tokens are in the dictionary named "tokens".
 from twitterTokens import tokens
@@ -81,9 +82,11 @@ def isUpdate():
 
 def getMenu():
     menuHTML = moco.select('.recently h3')
-    # remove prefix
-    remove = u'もこみち流　'
-    menu = menuHTML[0].getText().strip().strip(remove)
+    menu = menuHTML[0].getText().strip()
+    # remove prefix if exists
+    remove = re.compile(u'もこみち流[\s　]+')
+    if remove.match(menu):
+        menu = remove.sub('', menu)
     return menu
 
 
@@ -136,13 +139,15 @@ MOCO'Sキッチンのサイトが更新されているか確認します。AWS L
 ```python
 def getMenu():
     menuHTML = moco.select('.recently h3')
-    # remove prefix
-    remove = u'もこみち流　'
-    menu = menuHTML[0].getText().strip().strip(remove)
+    menu = menuHTML[0].getText().strip()
+    # remove prefix if exists
+    remove = re.compile(u'もこみち流[\s　]+')
+    if remove.match(menu):
+        menu = remove.sub('', menu)
     return menu
 ```
 
-料理名の箇所を抜き出します。HTML要素から`getText()`すると改行の`\n`が付いてきたので`strip()`で削っています。また、頭の「もこみち流　(全角スペース)」の部分を取り除くため続けて削っています。もっと良い方法があるかもしれませんが思いつきませんでした。
+料理名の箇所を抜き出します。HTML要素から`getText()`すると改行の`\n`が付いてきたので`strip()`で削っています。また、頭の「もこみち流　(全角スペース)」の部分を取り除くため続けて削っています。(16/11/07 追記)全角スペースだけでなく半角が混ざることもあるので正規表現で対応します。さらに、特別企画の際には「もこみち流」が付かない場合もあるので、その表記が含まれているのかどうかも確認します。
 
 そして`tweetMenu()`でトークンを読み込み認証を行い、抽出した料理名にハッシュタグを付けてつぶやかせます。ref: [Authentication Tutorial — tweepy 3.5.0 documentation](http://docs.tweepy.org/en/latest/auth_tutorial.html)
 
