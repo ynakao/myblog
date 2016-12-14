@@ -9,9 +9,9 @@ Nextcloudから新しいバージョンが[リリース](https://nextcloud.com/b
 
 <!--more-->
 
-前提として、ウェブサーバーにはNginx、データベースにはPostgreSQLを利用し、HTTPユーザは`www-data`、サードパーティのアプリに[Calendar](https://github.com/nextcloud/calendar/)と[Contacts](https://github.com/owncloud/contacts)をインストールしています。また、Nextcloudのルートディレクトリは`/var/www/`に、`data`ディレクトリは`/var/www/nextcloud/`内に配置しています。その他詳細はひとつ前の[ポスト](https://blog.yujinakao.com/2016/07/05/nextcloud-installation/)を確認ください。基本的にはドキュメントの通りに進めます。cf: [Manual Nextcloud Upgrade](https://docs.nextcloud.com/server/10/admin_manual/maintenance/manual_upgrade.html)
+前提として、ウェブサーバーにはNginx、データベースにはPostgreSQLを利用し、HTTPユーザは`www-data`、サードパーティのアプリに[Calendar](https://github.com/nextcloud/calendar/)と[Contacts](https://github.com/nextcloud/contacts)をインストールしています。また、Nextcloudのルートディレクトリは`/var/www/`に、`data`ディレクトリは`/var/www/nextcloud/`内に配置しています。その他詳細はひとつ前の[ポスト](https://blog.yujinakao.com/2016/07/05/nextcloud-installation/)を確認ください。基本的にはドキュメントの通りに進めます。cf: [Manual Nextcloud Upgrade](https://docs.nextcloud.com/server/10/admin_manual/maintenance/manual_upgrade.html)
 
-まず、管理者アカウントで`https://example.com/settings/apps`にアクセスしサードパーティアプリを無効化します。
+まず、管理者アカウントで`https://example.com/settings/apps`にアクセスしサードパーティアプリ(Calendar, Contacts)を無効化します。
 
 次に`occ`コマンドを用いNextcloudをメンテナンスモードに切り替えます。cf: [Using the occ Command](https://docs.nextcloud.com/server/10/admin_manual/configuration_server/occ_command.html)
 
