@@ -49,7 +49,7 @@ Nextcloudの[ダウンロードページ](https://nextcloud.com/install/#instruc
 旧バージョンのNextcloudディレクトリを`nextcloud-old`のようにリネームします。
 
 ```nohighlight
-# mv /var/www/nextcloud /var/www/nextcloud-old
+# mv /var/www/nextcloud /var/www/nextcloud-old-`date +"%Y%m%d"`
 ```
 
 先ほど展開した新しいNextcloudを配置します。
@@ -62,10 +62,10 @@ Nextcloudの[ダウンロードページ](https://nextcloud.com/install/#instruc
 
 ```nohighlight
 # cd /var/www
-# cp nextcloud-old/config/config.php nextcloud/config/
-# cp -r nextcloud-old/data/ nextcloud/
-# cp -r nextcloud-old/apps/calendar/ nextcloud/apps/
-# cp -r nextcloud-old/apps/contacts/ nextcloud/apps/
+# cp nextcloud-old-`date +"%Y%m%d"`/config/config.php nextcloud/config/
+# cp -r nextcloud-old-`date +"%Y%m%d"`/data/ nextcloud/
+# cp -r nextcloud-old-`date +"%Y%m%d"`/apps/calendar/ nextcloud/apps/
+# cp -r nextcloud-old-`date +"%Y%m%d"`/apps/contacts/ nextcloud/apps/
 ```
 
 ウェブサーバーを起動させます。
