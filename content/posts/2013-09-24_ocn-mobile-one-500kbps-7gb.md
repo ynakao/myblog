@@ -3,7 +3,7 @@ date = "2013-09-24"
 title = "OCNモバイルONE 500kbps/7GBプラン開通"
 tags = [ "MVNO", "OCN", "OCN mobile ONE" ]
 slug = "ocn-mobile-one-500kbps-7gb"
-modified = "2014-11-29"
+lastmod = "2014-11-29"
 +++
 
 ### はじめに

@@ -3,6 +3,7 @@ Tags = [ 'nextcloud', 'selfhost' ]
 date = "2016-12-10"
 slug = "nextcloud-upgrade"
 title = "Nextcloudをアップグレードする"
+lastmod = "2017-02-27"
 +++
 
 Nextcloudから新しいバージョンが[リリース](https://nextcloud.com/blog/nextcloud-updates-10.0.2-and-9.0.55-are-available-time-to-update/)され、アップグレードしたのでその際の手順です。管理者ページからウィザード形式で行う方法もありますが、上手くいかないことが多く手動で行いました。

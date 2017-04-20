@@ -3,7 +3,7 @@ Tags = [ "hugo", "aws", ]
 date = "2016-02-01"
 slug = "blog-migrated-to-hugo-on-s3-and-cloudfront"
 title = "HugoをS3+CloudFront上にSSLでホストする"
-modified = "2016-07-05"
+lastmod = "2016-07-05"
 +++
 
 ### はじめに

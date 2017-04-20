@@ -3,7 +3,7 @@ Tags = [ 'aws', 'python', 'twitter' ]
 date = "2016-02-17"
 slug = "mocos-kitchen-twitter-bot-on-aws-lambda"
 title = "AWS LambdaでMOCO'Sキッチンの更新情報をつぶやくTwitter Botを動かす"
-modified = "2017-04-19"
+lastmod = "2017-04-19"
 +++
 
 ### はじめに
