@@ -161,15 +161,15 @@ $ hugo
 ```
 
 - `Save`をクリック。
-- 次に`Properties`のタブをクリックし、`Static website hosting`の項目をクリックし内容を編集する。
+- 次に`Properties`のタブをクリック、`Static website hosting`の項目をクリックし内容を編集する。
 - `Use this bucket to host a website`のラジオボタンをクリック。`Index document`には`index.html`、`Error document`には`404.html`を入力し`Save`をクリックする。
-- `Static Website Hosting`に表示される`Endpoint`のURL(http://{バケット名}.s3-website-{バケットのリージョン}.amazonaws.com)にアクセスすることでウェブサイトのテストが可能。今回の場合は`http://blog.yujinakao.com.s3-website-ap-northeast-1.amazonaws.com`。
+- `Static website hosting`に表示される`Endpoint`のURL(http://{バケット名}.s3-website-{バケットのリージョン}.amazonaws.com)にアクセスすることでウェブサイトのテストが可能。今回の場合は`http://blog.yujinakao.com.s3-website-ap-northeast-1.amazonaws.com`。
 
 続いてS3にコマンドラインからアクセスするための設定を行います。まず、アクセスキーを発行します。ref: [IAM ユーザーのアクセスキーの管理 - AWS Identity and Access Management](http://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_credentials_access-keys.html)
 
 - 適切な権限を持つユーザーで[IAMコンソール](https://console.aws.amazon.com/iam/home)にログインする。
 - `User`をクリックし、S3にアクセス権限を持つユーザー→`Security Credentials`→`Create Access Keys`の順にクリック。
-- 鍵の作成に成功の旨のポップアップウインドウが表示されたら、`Secret access key`の項目内の`Show`をクリックし、`Access Key ID`と`Secret Access Key`の内容をメモしておく。`Download .csv file`からダウンロードすることも可能。ウインドウを閉じると`Secret Access Key`は二度と見ることができなくなり、忘れると再発行しなければならないことに注意。
+- 鍵の作成に成功の旨のポップアップウインドウが表示されたら、`Secret access key`の項目内の`Show`をクリックし、`Access Key ID`と`Secret Access Key`の内容をメモしておく。`Download .csv file`からダウンロードすることも可能。ウインドウを閉じると`Secret Access Key`は二度と見ることができなくなる。また、忘れると再発行しなければならないことに注意。
 - ローカル環境のコマンドラインでIDとKeyの設定を行う。ref: [configure — AWS CLI 1.10.1 Command Reference](http://docs.aws.amazon.com/cli/latest/reference/configure/index.html)
 
 ```nohighlight
@@ -208,7 +208,7 @@ CloudFrontを使ってSSL通信に対応したコンテンツデリバリーの�
 - [CloudFrontコンソール](https://console.aws.amazon.com/cloudfront/home)に適切な権限を持つユーザーでログイン。`Create Distribution`をクリックする。
 - デリバリー方式の選択を求められるので、`Web`の項目の`Get Started`をクリックする。
 - 各種項目を以下のように設定した。特に明記していなければ空白のままか、もしくは変更を行ってない場合である。
-  - **Origin Domain Name**: S3 `Endpoint` URLのドメイン箇所のみ({バケット名}.s3-website-{バケットのリージョン}.amazonaws.com)を入力。
+  - **Origin Domain Name**: S3 `Endpoint` URLのドメイン箇所のみ({バケット名}.s3-website-{バケットのリージョン}.amazonaws.com)を入力(http://は入力しない)。テキストエリアをクリックするとプルダウンにリージョン名を含まない候補({バケット名}.s3.amazonaws.com)がサジェストされることがあるが、これを選択するとうまく動作しない。必ずリージョン名を含んだエンドポイントを入力するよう注意する。
   - **Origin ID**: 上のOrigin Domain Nameを入力すると自動で割り振られる。
   - **Viewer Protocol Policy**: `Redirect HTTP to HTTPS`を選択。HTTPでアクセスしてもHTTPSのサイトにリダイレクトされるようにする。
   - **Alternate Domain Names(CNAMEs)**: `blog.yujinakao.com`を入力。
