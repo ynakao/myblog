@@ -3,8 +3,14 @@ Tags = [ 'aws', 'python', 'twitter' ]
 date = "2016-02-17"
 slug = "mocos-kitchen-twitter-bot-on-aws-lambda"
 title = "AWS LambdaでMOCO'Sキッチンの更新情報をつぶやくTwitter Botを動かす"
-lastmod = "2017-04-19"
+lastmod = "2018-03-05"
 +++
+
+### 2018/03/05 更新
+
+MOCO'sキッチンのサイトの仕様が変更されたため、以下のコードでは動作しなくまりました。bot箇所については[新しい記事](https://blog.yujinakao.com/2018/03/05/mocos-kitchen-twitter-bot-update/)を参考にしてください。AWS Lambdaでの設定はインターフェースの変更などが見受けられますが、おおまかな手順は変わっていません。
+
+---
 
 ### はじめに
 
