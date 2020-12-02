@@ -29,8 +29,8 @@ PCとプリンターとの接続はルーターのWi-Fiを介して行います�
 
 ```nohighlight
 $ sudo pacman -S cups hplip
-$ sudo systemctl start org.cups.cupsd.service
-$ sudo systemctl enable org.cups.cupsd.service
+$ sudo systemctl start cups.service
+$ sudo systemctl enable cups.service
 ```
 
 ブラウザから`http://localhost:631/`にアクセスすると`CUPS`の管理画面が開きます。この状態で`Printers`のタブを開いても何も表示されません。ここにEnvy 5020をリストするための操作を行います。先に例に示したIPアドレスを指定し以下のコマンドを実行すると、ターミナル上で対話形式のプログラムが始まります。
