@@ -3,6 +3,7 @@ Tags = [ 'arch', 'cups', 'hp']
 date = "2018-10-28"
 slug = "arch-linux-hp-envy-5020-printer"
 title = "Arch LinuxでHP Envy 5020プリンターをセットアップする"
+lastmod = "2020-12-02"
 +++
 
 これまで[HP Photosmart Premium C309g](http://jp.ext.hp.com/products/printers/inkjet/aio/c309g/)をプリンターとして使っていましたが、先日故障し動かなくなりました。購入してから9年経ってサポートが切れていることもあり、無理に修理するより新しく買った方が安く済むため思い切って新調することにしました。高性能な機能は求めていなかったので、検討した時点で一番安価だった[HP Envy 5020](http://jp.ext.hp.com/printers/personal/inkjet/envy5020/)を購入しました。今回はこのプリンターをArch Linuxから使用できるようにするための手順を書いていきます。
@@ -36,7 +37,7 @@ $ sudo systemctl enable cups.service
 ブラウザから`http://localhost:631/`にアクセスすると`CUPS`の管理画面が開きます。この状態で`Printers`のタブを開いても何も表示されません。ここにEnvy 5020をリストするための操作を行います。先に例に示したIPアドレスを指定し以下のコマンドを実行すると、ターミナル上で対話形式のプログラムが始まります。
 
 ```nohighlight
-$ sudo hp-setup -i 192.169.179.7
+$ hp-setup -i 192.169.179.7
 ...
 Please enter a name for this print queue (m=use model name:'ENVY_5000'*, q=quit) ?m
 // プリントキューの名前を訊かれる。ここではデフォルトのままにした。
@@ -71,7 +72,7 @@ Information:
 Would you like to print a test page (y=yes*, n=no, q=quit) ? y
 warning: hp-testpage should not be run as root/superuser.
 // 設定が完了したらテストページを印刷するか訊かれる。
-// スーパーユーザーで実行するなとの警告が出たが、hp-setupはノーマルユーザーでもセットアップできたのだろうか。
+
 ...
 Done.
 ```
